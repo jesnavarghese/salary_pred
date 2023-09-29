@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DS Salary Prediction</h1>
+        <form method="POST" action="/predict">
+        <div class="input-group">
+            <label for="input1">Work Year:</label>
+            <input type="number" id="input1" name="input1" required>
+        </div>
+        <div class="input-group">
+            <label for="input2">Experience Level:</label>
+            <select name="input2" id="input2">
+                <option value="SE">SE</option>
+                <option value="MI">MI</option>
+                <option value="EN">EN</option>
+                <option value="EX">EX</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="input3">Employment Type:</label>
+            <select name="input3" id="input3">
+                <option value="FT">FT</option>
+                <option value="CT">CT</option>
+                <option value="FL">FL</option>
+                <option value="PT">PT</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="input4">Job Title:</label>
+            <input type="text" id="input4" name="input4" placeholder="Enter the value" required>
+        </div>
+        <div class="input-group">
+            <label for="input5">Salary:</label>
+            <input type="number" id="input5" name="input5" required>
+        </div>
+        <div class="input-group">
+            <label for="input6">Salary Currency:</label>
+            <input type="text" id="input6" name="input6" required>
+        </div>
+        <div class="input-group">
+            <label for="input7">Remote Ratio:</label>
+            <input type="number" id="input7" name="input7" required>
+        </div>
+        <div class="input-group">
+            <label for="input8">Company Location:</label>
+            <input type="text" id="input8" name="input8" required>
+        </div>
+        <div class="input-group">
+            <label for="input9">Company Size:</label>
+            <select name="input9" id="input9">
+                <option value="L">L</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Predict salary</button>
+    </form>
+    <p>salary is {{ result }}</p>
+    </div>
+</body>
+</html>
