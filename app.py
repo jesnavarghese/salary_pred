@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 import pickle
 
+
 with open('model_and_encoders.pkl', 'rb') as file:
     loaded_data = pickle.load(file)
 
